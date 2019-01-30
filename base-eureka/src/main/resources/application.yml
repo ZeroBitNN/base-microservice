@@ -1,25 +1,32 @@
+# 部署在同一台服务器时，修改application.yml配置文件不同的server.port；
+# 部署在不同服务器时，修改配置instance.hostname为不同的IP，server.port可以相同的端口。
+
 spring:
   application:
     name: eureka-server
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8701/eureka/,http://127.0.0.1:8702/eureka/
 ---
 spring:
-  profiles: eurekaserver1
+  profiles: eurekapeer1
+# 同一台服务器时需要设置为不同端口
 server:
   port: 8701
+# 不在同一台服务器时需要修改hostname为不同的服务器IP
 eureka:
   instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:8702/eureka/
+    hostname: 127.0.0.1
 ---
 spring:
-  profiles: eurekaserver2
+  profiles: eurekapeer2
+# 同一台服务器时需要设置为不同端口
 server:
   port: 8702
+# 不在同一台服务器时需要修改hostname为不同的服务器IP
 eureka:
   instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:8701/eureka/
+    hostname: 127.0.0.1
