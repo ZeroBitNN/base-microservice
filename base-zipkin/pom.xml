@@ -10,6 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>base-zipkin</artifactId>
+    <description>服务跟踪分析中心</description>
 
 
 </project>

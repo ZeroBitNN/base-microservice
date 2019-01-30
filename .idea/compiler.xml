@@ -9,6 +9,8 @@
         <module name="base-config" />
         <module name="base-eureka" />
         <module name="base-hystrix" />
+        <module name="base-turbine" />
+        <module name="base-zipkin" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,6 +18,8 @@
       <module name="base-eureka" target="1.8" />
       <module name="base-hystrix" target="1.8" />
       <module name="base-microservice" target="1.8" />
+      <module name="base-turbine" target="1.8" />
+      <module name="base-zipkin" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
